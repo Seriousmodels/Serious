@@ -262,7 +262,10 @@ footer .contact-info p {
             </nav>
 
             <div class="banner-container">
-                <video autoplay muted loop  id="ban2" class="banner"><source src="photo\2.mov" ></video>
+                <video autoplay loop muted preload="auto" playsinline width="100%" height="auto" poster="path/to/poster.jpg">
+                    <source src="photo\2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
             </div>
         </header>
