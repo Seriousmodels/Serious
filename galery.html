@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Serious Models Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            color:white ;
+           background-color: black;
+        }
+        h2{
+            
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 5vw;
+            text-align: center;
+            
+            transition: 0.5s;
+        }
+        
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: space-between; /* Distribute space between items */
+        }
+
+        .gallery-item {
+            width: calc(25% - 10px); /* Set width to 25% of the container, minus margin */
+            margin: 5px; /* Add some space between items */
+            opacity:0.5;
+            transition:0.5s;
+        }
+
+        
+        .gallery-item:hover
+        {
+            opacity: 1;
+            
+        }
+        .gallery-item:hover img
+        {
+          border-radius: 2vw;
+          scale: 1.05;
+          transition: 0.5s;
+        }
+
+
+        .gallery-item img {
+            width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .nav-container {
+           float: right;
+           padding: 2%;
+           background-color: black;
+           
+             
+}
+        .text {
+
+            
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 4vw;
+            margin-left: 2vw; /* Adjusted for better spacing */
+            transition:0.5s;
+            color: aliceblue;
+           
+        }
+        
+
+        .text:hover {
+            background-color: rgb(255, 0, 0);
+            color: black;
+            border-radius: 1vw;
+        }
+
+        .banner-container
+        {
+            width:100% ;
+            margin-top: 5%;
+        }
+
+        .banner-container img
+        {
+            width: 100%;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 5%;
+            max-width: 1000px;
+            text-align: center;
+            
+           
+        }
+        .gallery-image {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .close {
+            position: fixed;
+            z-index: 2;
+            position:absolute;
+            top: 10px;
+            right: 25px;
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            padding: 5%;
+            text-align: center;
+        }
+        .text3{
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+        .text3 h1{
+            color: aliceblue;
+            font-size: 7vw;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .partners-container{
+            place-items: center;
+         width: 100%;
+         position: relative;
+         display: flex;
+         justify-content: space-between;
+         
+        }
+        .partners-container img{
+            
+            width: 7vw;
+        }
+        
+        
+        
+
+        .yo {
+            color: aliceblue;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: xx-large;
+        }
+
+        .social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+footer .contact-info p {
+    margin: 10px 0;
+}
+.e-con-inner {
+    display: flex; /* Display icon boxes in a row */
+    flex-wrap: wrap; /* Allow wrapping if there are too many boxes */
+    justify-content: space-between; /* Space between the boxes */
+}
+
+.elementor-icon-box-wrapper {
+    background-color: black; /* Background color for the icon box */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the box */
+    margin: 10px; /* Margin between boxes */
+    display: flex; /* Aligns icon and text horizontally */
+    align-items: center; /* Centers items vertically */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 250px; /* Fixed width for icon boxes */
+}
+
+.elementor-icon-box-wrapper:hover {
+    background-color: darkgrey; /* Change background on hover */
+}
+
+.elementor-icon-box-icon {
+    margin-right: 10px; /* Space between icon and text */
+    padding: 10px; /* Padding for the square */
+    background-color: darkred; /* Dark red square */
+    border-radius: 5px; /* Optional: rounded corners for the square */
+}
+
+.elementor-icon-box-title {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2rem; /* Title font size */
+}
+
+.elementor-icon-box-description {
+    margin: 5px 0 0; /* Margin for description */
+    font-size: 0.9rem; /* Description font size */
+}
+
+/* Optional: Style for the icon itself */
+.elementor-icon {
+    font-size: 24px; /* Adjust icon size */
+    color: white; /* Icon color */
+}
+/* Header Styles */
+
+
+.phone-button {
+    margin-left: auto; /* Pushes the button to the right */
+}
+  
+
+
+/* Phone Button */
+.phone-button button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  
+  border-radius: 25px; /* Add this line for rounded corners */
+}
+.logo {
+            top: 10px;
+            left: 10px;
+            position: fixed;
+            width: 8vw;
+            z-index: 4;
+        }
+       
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <div class="logo-container">
+            <img class="logo" src="photo\serious model logo copie.png">
+        </div>
+        <nav class="menu">
+            <nav class="nav-container">
+                <a id="menu1" href="s5.html" class="text">Home</a>
+                <a id="menu2" href="galery.html" class="text">Galery</a>
+                <a id="menu3" href="events.html" class="text">Events</a>
+                <a id="menu5" href="contacts.html" class="text">Contact Us</a>
+            </nav>
+
+        <section class="banner">
+            <div class="banner-container">
+                <img src="https://live.staticflickr.com/65535/54111605587_13f9bedb9e_b.jpg">
+
+            </div>
+            </section>
+
+        </div>
+    </header>
+
+    <section class="gallery">
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <h2>Adem</h2>
+                <img id="1" src="https://live.staticflickr.com/65535/54108295566_2254878866_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Ayanna</h2>
+                <img id="2" src="https://live.staticflickr.com/65535/54108631579_6cb54809d6_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Ali</h2>
+                <img id="3" src="https://live.staticflickr.com/65535/54108548753_b09678f2de_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Alicia</h2>
+                <img id="4" src="https://live.staticflickr.com/65535/54108626814_392aa069e8_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Alyssia</h2>
+                <img  id="5" src="https://live.staticflickr.com/65535/54108548578_86918e83ff_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Arthur</h2>
+                <img id="6" src="https://live.staticflickr.com/65535/54108290181_75e5b1a5f5_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Bineta</h2>
+                <img id="29" src="https://live.staticflickr.com/65535/54197022082_80cd06df64_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Camille</h2>
+                <img id="7" src="https://live.staticflickr.com/65535/54108543738_4f82032c57_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Coralie</h2>
+                <img id="8" src="https://live.staticflickr.com/65535/54108543728_bb8652e73d_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Elaroz</h2>
+                <img id="31" src="https://live.staticflickr.com/65535/54114704447_0949bd153f_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Emily</h2>
+                <img id="9" src="https://live.staticflickr.com/65535/54108294266_2a3ef2b932_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Gaby</h2>
+                <img id="10" src="https://live.staticflickr.com/65535/54107423492_1acbff044b_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Hadile</h2>
+                <img id="11" src="https://live.staticflickr.com/65535/54108744735_ae8efdd44a_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Jessie</h2>
+                <img id="12" src="https://live.staticflickr.com/65535/54108744230_ca77e65fa2_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+              <h2>karina</h2>
+                <img id="13" src="https://live.staticflickr.com/65535/54108543708_436a9fda76_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Kym</h2>
+                <img id="14" src="https://live.staticflickr.com/65535/54108290086_26e62d85ff_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Laeticia</h2>
+                <img id="15" src="https://live.staticflickr.com/65535/54108293461_063e750861_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Lily</h2>
+                <img id="16" src="https://live.staticflickr.com/65535/54108290056_aa7a5e386c_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Looney</h2>
+                <img id="17" src="c:\Users\Marc-Andy\OneDrive\Serious models\serious models\looney (4).JPG" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Ly</h2>
+                <img id="18" src="https://live.staticflickr.com/65535/54108546143_8b46e6cb91_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Maely</h2>
+                <img id="19" src="https://live.staticflickr.com/65535/54108743060_577e5f496c_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Mahe</h2>
+                <img id="20" src="https://live.staticflickr.com/65535/54107419792_77a43a512a_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                 <h2>Maika</h2>
+                <img id="21" src="https://live.staticflickr.com/65535/54108545818_0947e153ba_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Maika F</h2>
+                <img id="22" src="https://live.staticflickr.com/65535/54108628519_0f69a6df6d_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Mely</h2>
+                <img id="32" src="https://live.staticflickr.com/65535/54108291841_5d317c89eb_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>myrianna</h2>
+                <img id="23" src="https://live.staticflickr.com/65535/54108545363_a066f91b8c_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>N-Djouna</h2>
+                <img id="24" src="https://live.staticflickr.com/65535/54107419757_b319e9b1a3_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Oceanne</h2>
+                <img id="25" src="https://live.staticflickr.com/65535/54108291456_349a0a961f_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Oumy</h2>
+                <img id="30" src="https://live.staticflickr.com/65535/54198352770_07f2866e67_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Synda</h2>
+                <img id="26" src="https://live.staticflickr.com/65535/54107420642_55150220cf_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+            <div class="gallery-item">
+                <h2>Terrence</h2>
+                <img id="27" src="https://live.staticflickr.com/65535/54108627439_c3844fce29_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+           
+            <div class="gallery-item">
+                 <h2>Thomas</h2>
+                <img id="28" src="https://live.staticflickr.com/65535/54108627224_c23fa11aee_b.jpg" onclick="openGallery(gallery1)">
+            </div>
+        </div>
+       
+        <div id="mymodal1" class="modal">
+       <span class="close" id="closemodal" >&times;</span>
+       <div class="modal-content">
+        <img src="c:\Users\Marc-Andy\OneDrive\Serious models\Adem (9).JPG">
+        <img src="c:\Users\Marc-Andy\OneDrive\Serious models\Adem (4).JPG">
+       </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="partners-container">
+            <a href="https://www.instagram.com/beau_terrible/"><div class="Partners"><img src="photo\Beau terrible-01 copie.png" alt=""></div></a>
+            <a href="https://www.instagram.com/bonezzmontreal/"><div class="Partners"><img src="photo\bonezze.png" alt=""></div></a>
+            <a href=""><div class="Partners"><img src="photo\edwin.png" alt=""></div></a>
+            <a href="https://www.instagram.com/fantaisie_line/"><div class="Partners"><img src="photo\fantas.png" alt=""></div></a>
+            <a href=""><div class="Partners"><img src="photo\g122.png" alt=""></div></a>
+            <a href="https://www.instagram.com/mellow_terra/"><div class="Partners"><img src="photo\mellow.png" alt=""></div></a>
+            <a href="https://www.instagram.com/ateliermesse"><div class="Partners"><img src="photo\messe.png" alt=""></div></a>
+            <a href="https://www.instagram.com/samijo.mtl/"><div class="Partners"><img src="photo\sam.png" alt=""></div></a>
+            <a href="https://www.instagram.com/studio_acces/"><div class="Partners"><img src="photo\studio.png" alt=""></div></a>
+            <a href=""><div class="Partners"><img src="photo\unio.png" alt=""></div></a>
+            <a href="https://www.instagram.com/zinedesigns/"><div class="Partners"><img src="photo\z.png" alt=""></div></a>
+            <a href="https://www.instagram.com/prime_designer_/"><div class="Partners"><img src="photo\prime.png" alt=""></div></a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/discover/seriousmodels" target="_blank" title="Follow us on TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.instagram.com/seriousmodels/" target="_blank" title="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/SseriousModels/" target="_blank" title="Follow us on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            </div>
+            </div>
+            
+            <!-- Additional Code -->
+            <div class="elementor-element elementor-element-91bd2bf e-flex e-con-boxed e-con e-parent">
+            <div class="e-con-inner">
+            <div class="elementor-element elementor-element-114582db e-flex e-con-boxed e-con e-child">
+                <div class="e-con-inner">
+                    <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-icon">
+                            <a href="tel:4383792121" class="elementor-icon elementor-animation-shrink">
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        </div>
+                        <div class="elementor-icon-box-content">
+                            <h4 class="elementor-icon-box-title">
+                                <a href="tel:4386862948">call-us</a>
+                            </h4>
+                            <p class="elementor-icon-box-description">438-686-2948</p>
+                        </div>
+                    </div>
+                    <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-icon">
+                            <a href="Bookseriouspictures@gmail.com" class="elementor-icon elementor-animation-shrink">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <div class="elementor-icon-box-content">
+                            <h4 class="elementor-icon-box-title">
+                                <a href="Bookseriouspictures@gmail.com">Email</a>
+                            </h4>
+                            <p class="elementor-icon-box-description">Bookseriouspictures@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script>
+        const modal = document.getElementById("mymodal1");
+        const closeModal = document.getElementById("closemodal")  
+    
+        // Define image sets for each thumbnail
+        const imageSets = {
+            1: [
+                
+                'https://live.staticflickr.com/65535/54108549418_4a57551028_b.jpg',
+                'https://live.staticflickr.com/65535/54107425277_605f96d1be_b.jpg',
+                'https://live.staticflickr.com/65535/54108295401_ac539e0148_b.jpg',
+                'https://live.staticflickr.com/65535/54108295476_237ba90366_b.jpg',
+                'https://live.staticflickr.com/65535/54108295426_4dc87ed068_b.jpg',
+            ],
+            2: [
+                'https://live.staticflickr.com/65535/54107424917_b9cf9fa8af_b.jpg',
+                'https://live.staticflickr.com/65535/54107424842_f39a0441a3_b.jpg',
+                'https://live.staticflickr.com/65535/54108631589_654fb67161_b.jpg',
+                'https://live.staticflickr.com/65535/54107424777_82e9c90f48_b.jpg',
+                'https://live.staticflickr.com/65535/54108745915_60ac8286b5_b.jpg',
+                'https://live.staticflickr.com/65535/54108631504_f10ae84084_b.jpg'
+            ],
+            3: [
+                'https://live.staticflickr.com/65535/54107424642_eb8e07357f_b.jpg',
+                'https://live.staticflickr.com/65535/54108631439_2e3c1f25f0_b.jpg',
+                'https://live.staticflickr.com/65535/54108548883_0507d6c02b_b.jpg'
+            ],
+
+            4: [
+                'https://live.staticflickr.com/65535/54108543823_70bd50b16c_b.jpg',
+                'https://live.staticflickr.com/65535/54108626819_cc837be00c_b.jpg',
+                'https://live.staticflickr.com/65535/54108543798_cc8b65e9eb_b.jpg',
+                'https://live.staticflickr.com/65535/54108290196_10a245845f_b.jpg',
+                'https://live.staticflickr.com/65535/54108741020_0a8a9bef6b_b.jpg',
+                'https://live.staticflickr.com/65535/54107419967_78a74da58e_b.jpg'
+            ],
+
+            5: [
+                'https://live.staticflickr.com/65535/54108745585_f346481a12_b.jpg',
+                'https://live.staticflickr.com/65535/54108745565_d75f841e31_b.jpg',
+                'https://live.staticflickr.com/65535/54107424382_165379abc7_b.jpg',
+                'https://live.staticflickr.com/65535/54107424312_89fd6bbd83_b.jpg',
+                'https://live.staticflickr.com/65535/54107424247_896aae7239_b.jpg',
+                'https://live.staticflickr.com/65535/54108548243_3153c694ba_b.jpg',
+                'https://live.staticflickr.com/65535/54108630974_4e1475d810_b.jpg'
+            ],
+
+            6: [
+                'https://live.staticflickr.com/65535/54108740975_81b72611e2_b.jpg',
+                'https://live.staticflickr.com/65535/54108626789_4a08010f59_b.jpg',
+                'https://live.staticflickr.com/65535/54108543773_a401d1504f_b.jpg',
+                'https://live.staticflickr.com/65535/54108626784_0cf547deb0_b.jpg',
+                'https://live.staticflickr.com/65535/54108290166_03a6382943_b.jpg',
+                'https://live.staticflickr.com/65535/54108740955_9784d6ae68_b.jpg',
+                'https://live.staticflickr.com/65535/54108290141_bc6bc68c9a_b.jpg'
+            ],
+
+            7: [
+                'https://live.staticflickr.com/65535/54108543738_4f82032c57_b.jpg',
+                'https://live.staticflickr.com/65535/54107419922_bfe7e06105_b.jpg',
+                'https://live.staticflickr.com/65535/54108290126_f0c93ece0c_b.jpg',
+                'https://live.staticflickr.com/65535/54108740940_1d5fa66049_b.jpg',
+                'https://live.staticflickr.com/65535/54108740935_c2a0975dee_b.jpg'
+
+            ],
+
+            8: [
+                'https://live.staticflickr.com/65535/54108543728_bb8652e73d_b.jpg',
+                'https://live.staticflickr.com/65535/54108740915_e1129571eb_b.jpg',
+                'https://live.staticflickr.com/65535/54108543723_fe7ca2fce0_b.jpg',
+                'https://live.staticflickr.com/65535/54108626749_4890ef2255_b.jpg',
+                'https://live.staticflickr.com/65535/54108626724_b31c242225_b.jpg',
+                'https://live.staticflickr.com/65535/54108630639_45dfd72eab_b.jpg',
+                'https://live.staticflickr.com/65535/54108294321_204c1160da_b.jpg'
+
+
+            ],
+            9:[
+                'https://live.staticflickr.com/65535/54108294266_2a3ef2b932_b.jpg',
+                'https://live.staticflickr.com/65535/54108294251_78f9267a78_b.jpg',
+                'https://live.staticflickr.com/65535/54108745020_11fb0cce28_b.jpg',
+                'https://live.staticflickr.com/65535/54108294186_58375f7ebf_b.jpg',
+                'https://live.staticflickr.com/65535/54108744850_fbf017bdc3_b.jpg'
+
+                
+            ],
+            10: [
+                'https://live.staticflickr.com/65535/54107423492_1acbff044b_b.jpg',
+                'https://live.staticflickr.com/65535/54107423487_24fc5776b1_b.jpg',
+                'https://live.staticflickr.com/65535/54108740885_5586df331a_b.jpg'
+
+            ],
+            11:[
+                'https://live.staticflickr.com/65535/54108744735_ae8efdd44a_b.jpg',
+                'https://live.staticflickr.com/65535/54108547513_35d27f4019_b.jpg'
+
+            ],
+
+            12: [
+                'https://live.staticflickr.com/65535/54108744230_ca77e65fa2_b.jpg',
+                'https://live.staticflickr.com/65535/54108629914_20fb7c41e6_b.jpg',
+                'https://live.staticflickr.com/65535/54108744335_4839590a26_b.jpg'
+            ],
+
+            13:[
+             'https://live.staticflickr.com/65535/54108543708_436a9fda76_b.jpg',
+             'https://live.staticflickr.com/65535/54107419857_06095a10c0_b.jpg',
+             'https://live.staticflickr.com/65535/54108740880_420f970b0f_b.jpg',
+             'https://live.staticflickr.com/65535/54108626714_372867a53b_b.jpg',
+             ''
+            ],
+
+            14:[
+                'https://live.staticflickr.com/65535/54108290086_26e62d85ff_b.jpg',
+                'https://live.staticflickr.com/65535/54108290081_3662911cee_b.jpg'
+            ],
+            15:[
+                'https://live.staticflickr.com/65535/54108293461_063e750861_b.jpg',
+                'https://live.staticflickr.com/65535/54108629744_5fa8cbc5fa_b.jpg',
+                'https://live.staticflickr.com/65535/54108547053_2e04414b49_b.jpg',
+                'https://live.staticflickr.com/65535/54108293246_31aa4491b0_b.jpg',
+                'https://live.staticflickr.com/65535/54108743910_2e614b4f35_b.jpg',
+                'https://live.staticflickr.com/65535/54108629579_3779174c54_b.jpg'
+
+            ],
+
+            16:[
+                'https://live.staticflickr.com/65535/54108290056_aa7a5e386c_b.jpg',
+                'https://live.staticflickr.com/65535/54108740860_348c3746b9_b.jpg',
+                'https://live.staticflickr.com/65535/54108290076_59bebd28cc_b.jpg',
+                'https://live.staticflickr.com/65535/54108740870_67bba1bc46_b.jpg',
+                'https://live.staticflickr.com/65535/54108543683_992620db60_b.jpg',
+                'https://live.staticflickr.com/65535/54107419827_9b61814bcb_b.jpg',
+                'https://live.staticflickr.com/65535/54108543668_f5d0ea6734_b.jpg',
+                'https://live.staticflickr.com/65535/54108290041_21840140f4_b.jpg'
+            ],
+
+            17:[
+                'https://live.staticflickr.com/65535/54108629189_fecbc7c350_w.jpg',
+                'https://live.staticflickr.com/65535/54108629384_29e5ea1deb_w.jpg',
+                'https://live.staticflickr.com/65535/54108629344_5efb995d98_w.jpg',
+                'https://live.staticflickr.com/65535/54107422572_fb7935136f_w.jpg',
+                'https://live.staticflickr.com/65535/54108629209_12a928962e_w.jpg',
+                'https://live.staticflickr.com/65535/54108546443_bae52120da_w.jpg'
+
+            ],
+
+            18:[
+                'https://live.staticflickr.com/65535/54108546143_8b46e6cb91_b.jpg',
+                'https://live.staticflickr.com/65535/54108292646_6be3fb039b_b.jpg',
+                'https://live.staticflickr.com/65535/54108292596_2fee2ea98e_b.jpg',
+                'https://live.staticflickr.com/65535/54108743335_20db2c7141_b.jpg',
+                'https://live.staticflickr.com/65535/54107422127_c517d0c14c_b.jpg',
+                'https://live.staticflickr.com/65535/54107422052_0b4fdb136f_b.jpg',
+                'https://live.staticflickr.com/65535/54108546143_8b46e6cb91_b.jpg'
+            ],
+            19:[
+                'https://live.staticflickr.com/65535/54108743060_577e5f496c_b.jpg',
+                'https://live.staticflickr.com/65535/54107421977_6841d52242_b.jpg',
+                'https://live.staticflickr.com/65535/54108628809_d6245e8eac_b.jpg',
+                'https://live.staticflickr.com/65535/54108628784_1b0bd09bd0_b.jpg',
+                'https://live.staticflickr.com/65535/54108628759_799136e502_b.jpg',
+                'https://live.staticflickr.com/65535/54108545973_35a9d648e7_b.jpg'
+                
+            ],
+
+            20:[
+                'https://live.staticflickr.com/65535/54108740840_552e2dde0e_b.jpg',
+                'https://live.staticflickr.com/65535/54108626684_ca64ede8cb_b.jpg',
+                'https://live.staticflickr.com/65535/54108740825_e829c32696_b.jpg',
+                'https://live.staticflickr.com/65535/54108290036_f62a596b72_b.jpg',
+                'https://live.staticflickr.com/65535/54108626664_237fb35aa8_b.jpg',
+                'https://live.staticflickr.com/65535/54107419792_77a43a512a_b.jpg',
+                'https://live.staticflickr.com/65535/54108543658_a230bd4bb6_b.jpg',
+                'https://live.staticflickr.com/65535/54107419787_509a407e5f_b.jpg',
+                'https://live.staticflickr.com/65535/54108290021_37d654c63f_b.jpg',
+                'https://live.staticflickr.com/65535/54107419772_e8726cf398_b.jpg',
+                'https://live.staticflickr.com/65535/54108740790_b47a8b3aa9_b.jpg',
+                'https://live.staticflickr.com/65535/54108290006_f72d99d79a_b.jpg',
+                'https://live.staticflickr.com/65535/54108628609_b3c904a642_b.jpg'
+            ],
+
+            21:[
+                'https://live.staticflickr.com/65535/54108545818_0947e153ba_b.jpg',
+                'https://live.staticflickr.com/65535/54108291971_7fccaa8f60_b.jpg',
+                'https://live.staticflickr.com/65535/54108291921_d51e0aa30f_b.jpg'
+            ],
+
+            22: [
+                'https://live.staticflickr.com/65535/54108628519_0f69a6df6d_b.jpg',
+                'https://live.staticflickr.com/65535/54108545638_d20a7883ca_b.jpg'
+            ],
+
+            23:[
+                'https://live.staticflickr.com/65535/54108545363_a066f91b8c_b.jpg',
+                'https://live.staticflickr.com/65535/54108742345_c5355dace2_b.jpg',
+                'https://live.staticflickr.com/65535/54108545268_4f82a89a53_b.jpg',
+                'https://live.staticflickr.com/65535/54108628069_51d7c7a385_b.jpg',
+                'https://live.staticflickr.com/65535/54108545133_bacaa4315b_b.jpg'
+            ],
+
+            24:[
+                'https://live.staticflickr.com/65535/54107419757_b319e9b1a3_b.jpg',
+                'https://live.staticflickr.com/65535/54108543643_4ca54139e0_b.jpg',
+                'https://live.staticflickr.com/65535/54108626634_4910a5c2b3_b.jpg',
+                'https://live.staticflickr.com/65535/54108290001_9d4815754c_b.jpg',
+                'https://live.staticflickr.com/65535/54108740765_1c2bde1fb6_b.jpg',
+                'https://live.staticflickr.com/65535/54108289996_f060829853_b.jpg',
+                'https://live.staticflickr.com/65535/54108740760_ab75f271c5_b.jpg',
+                'https://live.staticflickr.com/65535/54108626619_c2d0aeaf01_b.jpg',
+                'https://live.staticflickr.com/65535/54108289971_33096e7a30_b.jpg',
+                'https://live.staticflickr.com/65535/54108289966_a3cbc1cc2a_b.jpg',
+                'https://live.staticflickr.com/65535/54108289961_2f2641ebc4_b.jpg'
+            ],
+
+            25:[
+                'https://live.staticflickr.com/65535/54108291456_349a0a961f_b.jpg',
+                'https://live.staticflickr.com/65535/54107421137_934b0f95c1_b.jpg',
+                'https://live.staticflickr.com/65535/54108545013_8507920038_b.jpg',
+                'https://live.staticflickr.com/65535/54108741985_7d38ffd0a5_b.jpg'
+            ],
+
+            26:[
+                'https://live.staticflickr.com/65535/54107420642_55150220cf_b.jpg',
+                'https://live.staticflickr.com/65535/54108290866_c1251bfb79_b.jpg'
+            ],
+            27:[
+                'https://live.staticflickr.com/65535/54108627439_c3844fce29_b.jpg',
+                'https://live.staticflickr.com/65535/54107420612_02e7deaaaf_b.jpg',
+                'https://live.staticflickr.com/65535/54108544543_d6cbfa4d10_b.jpg',
+                'https://live.staticflickr.com/65535/54108290756_ca418aeb40_b.jpg',
+                'https://live.staticflickr.com/65535/54107420472_1e3135f305_b.jpg',
+                'https://live.staticflickr.com/65535/54108741540_cea234785f_b.jpg',
+                'https://live.staticflickr.com/65535/54108290621_ae22acc7c4_b.jpg',
+                'https://live.staticflickr.com/65535/54108544253_f02a12b674_b.jpg'
+            ],
+
+            28:[
+                'https://live.staticflickr.com/65535/54108740605_e2f5036208_b.jpg',
+                'https://live.staticflickr.com/65535/54108543403_30c43ba844_b.jpg',
+                'https://live.staticflickr.com/65535/54108289766_1967669157_b.jpg',
+                'https://live.staticflickr.com/65535/54108627224_c23fa11aee_b.jpg'
+
+            ],
+
+            29:[
+                'https://live.staticflickr.com/65535/54197919856_1a8eb41cc1_b.jpg',
+                'https://live.staticflickr.com/65535/54198173579_af332e99f2_b.jpg',
+                'https://live.staticflickr.com/65535/54197022082_80cd06df64_b.jpg',
+                'https://live.staticflickr.com/65535/54197919866_3c250aa929_b.jpg',
+                'https://live.staticflickr.com/65535/54198157623_1fc14c4852_b.jpg',
+                'https://live.staticflickr.com/65535/54198157633_5b8208473b_b.jpg',
+                'https://live.staticflickr.com/65535/54198352900_526d0151fd_b.jpg',
+                'https://live.staticflickr.com/65535/54197919896_c84bc25076_b.jpg',
+                'https://live.staticflickr.com/65535/54198157668_6f348d84a0_b.jpg',
+                'https://live.staticflickr.com/65535/54197919906_8bc9e03e96_b.jpg'
+            ],
+            30:[
+                'https://live.staticflickr.com/65535/54197919811_fa5bcba375_b.jpg',
+                'https://live.staticflickr.com/65535/54197022022_341bf745e6_b.jpg',
+                'https://live.staticflickr.com/65535/54198173484_92f10ce5bb_b.jpg',
+                'https://live.staticflickr.com/65535/54198352770_07f2866e67_b.jpg',
+                'https://live.staticflickr.com/65535/54198173514_7dd7842e74_b.jpg',
+                'https://live.staticflickr.com/65535/54198173504_fccdceaacc_b.jpg',
+                'https://live.staticflickr.com/65535/54197022042_cd0692344d_b.jpg',
+                'https://live.staticflickr.com/65535/54197022062_48e3a1b661_b.jpg',
+                'https://live.staticflickr.com/65535/54198352885_7be3b25b12_b.jpg'
+            ],
+            31:[
+                'https://live.staticflickr.com/65535/54114704447_0949bd153f_b.jpg',
+                'https://live.staticflickr.com/65535/54114706122_cb68504383_b.jpg',
+                'https://live.staticflickr.com/65535/54115899474_8167160980_b.jpg',
+                'https://live.staticflickr.com/65535/54115564971_84a4305ac9_b.jpg',
+                'https://live.staticflickr.com/65535/54115566201_cafb796ff8_b.jpg',
+                'https://live.staticflickr.com/65535/54115566081_da4805e8e5_b.jpg',
+                'https://live.staticflickr.com/65535/54115833533_43cb84cd60_b.jpg',
+                'https://live.staticflickr.com/65535/54116030040_1a2541033d_b.jpg',
+                'https://live.staticflickr.com/65535/54115564466_123762e882_b.jpg'
+            ],
+            32:[
+                'https://live.staticflickr.com/65535/54108291841_5d317c89eb_b.jpg',
+                'https://live.staticflickr.com/65535/54108291871_9ea4a596c8_b.jpg',
+                'https://live.staticflickr.com/65535/54108291776_9c253d75fd_b.jpg',
+                'https://live.staticflickr.com/65535/54108545538_29bedec521_b.jpg',
+                'https://live.staticflickr.com/65535/54108628289_e8721c4ac5_b.jpg',
+                'https://live.staticflickr.com/65535/54107421347_4f961651c8_b.jpg'
+
+            ],
+
+        };
+    
+        function openGallery(images) {
+            const modalContent = modal.querySelector(".modal-content");
+            modalContent.innerHTML = ""; // Clear previous content
+    
+            images.forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.classList.add("gallery-image"); 
+                modalContent.appendChild(img);
+            });
+    
+            modal.style.display = "block"; // Show the modal
+        }
+    
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    
+        const thumbnails = document.querySelectorAll('.gallery-item img');
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.onclick = function() {
+                const images = imageSets[thumbnail.id]; 
+                openGallery(images);
+            };
+        });
+    </script>
+</body>
+</html>

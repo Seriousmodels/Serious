@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <style>
+            body {
+                background-color: black;
+                color: aliceblue;
+                }
+
+                .nav-container
+                {
+                    background-color: rgb(0, 0, 0);
+                    padding: 3%;
+                    display: flex;
+                    float: right;
+
+                  
+
+                }
+                .logo {
+            top: 10px;
+            left: 10px;
+            position: fixed;
+            width: 8vw;
+            z-index: 4;
+        }
+
+        @media (max-width:600px) {
+          .logo {
+            width: 10vh;
+          }
+        }
+
+                .text
+                {   margin-right:2vw ;
+                    color: aliceblue;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: 4vw;
+                    transition: 0.5s;
+                }
+
+                .text:hover
+                {
+                  background-color: rgb(255, 0, 0);
+                  color: black;
+                  border-radius: 1vw;
+                }
+
+                .banner-container
+                {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .banner
+                {
+                    width: 100%;
+                }
+
+                .whos-next{
+                    width: 100%;
+                    position: relative;
+                    
+                }
+                .title{
+                    width: 100%;
+                }
+
+                .title h1{
+                    text-align: center;
+                    font-size: 6vw;
+                    font-family: 'Times New Roman', Times, serif;
+
+                }
+
+                .title h2{
+                    text-align: left;
+                    font-size: 4vw;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+
+                .images{
+                    width: 100%;
+                    display: flex;
+                    
+                    align-items: center;
+                   
+                }
+                .images img{
+                 width:calc(100% - 5%);  
+                }
+
+                .button-container{
+                    width: 100%;
+                    left: calc(50% - 25%);
+                    margin-top: 5vw;
+                    position: relative;
+                }
+
+                .button-container button{
+                    width: 50%;
+                    position: relative;
+                    background-color: rgb(240, 164, 0);
+                    border-radius: 5vw;
+                    transition: 0.5s;
+                }
+                .button-container a {
+                    font-size: 3vw;
+                    font-family: 'Times New Roman', Times, serif;
+                    color: rgb(0, 0, 0);
+                }
+
+                .button-container button:hover {
+                    
+                    scale: 1.1;
+                    background-color: rgb(216, 153, 18);
+                    color: rgb(255, 255, 255);
+                }
+             
+
+       
+        .text3{
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+        .text3 h1{
+            color: aliceblue;
+            font-size: 4vw;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .partners-container{
+            place-items: center;
+         width: 100%;
+         position: relative;
+         display: flex;
+         justify-content: space-between;
+         
+        }
+        .partners-container img{
+            
+            width: 7vw;
+        }
+        
+        
+        
+
+        .yo {
+            color: aliceblue;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: xx-large;
+        }
+
+        .social-icons {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    
+}
+
+footer .social-icons a {
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 3vw;
+
+}
+
+footer .contact-info p {
+    margin: 1vw 0;
+}
+.e-con-inner {
+    display: flex; /* Display icon boxes in a row */
+    flex-wrap: wrap; /* Allow wrapping if there are too many boxes */
+    justify-content: space-between; /* Space between the boxes */
+}
+
+.elementor-icon-box-wrapper {
+    display: flex;
+    background-color: black; /* Background color for the icon box */
+    color: white; /* Text color */
+    border-radius: 1vw; /* Rounded corners */
+    padding: 1%; /* Padding inside the box */
+    margin: 1vw; /* Margin between boxes */
+    display: flex; /* Aligns icon and text horizontally */
+    align-items: center; /* Centers items vertically */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 250px; /* Fixed width for icon boxes */
+}
+
+.elementor-icon-box-wrapper:hover {
+    background-color: darkgrey; /* Change background on hover */
+}
+
+.elementor-icon-box-icon {
+    margin-right: 10px; /* Space between icon and text */
+    padding: 10px; /* Padding for the square */
+    background-color: darkred; /* Dark red square */
+    border-radius: 5px; /* Optional: rounded corners for the square */
+}
+
+.elementor-icon-box-title {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2rem; /* Title font size */
+}
+
+.elementor-icon-box-description {
+    margin: 5px 0 0; /* Margin for description */
+    font-size: 0.9rem; /* Description font size */
+}
+
+/* Optional: Style for the icon itself */
+.elementor-icon {
+    font-size: 24px; /* Adjust icon size */
+    color: white; /* Icon color */
+}
+/* Header Styles */
+
+
+.phone-button {
+    margin-left: auto; /* Pushes the button to the right */
+}
+  
+
+
+/* Phone Button */
+.phone-button button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  
+  border-radius: 25px; /* Add this line for rounded corners */
+}
+
+                
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img class="logo" src="photo\serious model logo copie.png">
+            </div>
+            <nav class="menu">
+                <nav class="nav-container">
+                    <a id="menu1" href="s5.html" class="text">Home</a>
+                    <a id="menu2" href="galery.html" class="text">Galery</a>
+                    <a id="menu3" href="events.html" class="text">Events</a>
+                   <a id="menu5" href="contacts.html" class="text">Contact Us</a>
+                </nav>
+            </nav>
+
+            <div class="banner-container">
+                <video autoplay muted loop  id="ban2" class="banner"><source src="photo\2.mov" ></video>
+
+            </div>
+        </header>
+        <section class="events1">
+            
+                <div class="whos-next">
+                    <div class="title"><h1>Yearly Events</h1></div>
+                    <div class="title"><h2>Who's Next</h2></div>
+ </div>
+                 <div class="images">
+                <div class="poster"><img src="photo\8887333E-9123-4C1B-8AD3-91BEAB1C385F.jpeg" alt=""></div>
+                <div class="poster"><img src="photo\C9F8C6EA-DA2F-4284-BA53-CF4215C4D2A6.jpeg" alt=""></div>
+                <div class="poster"><img src="photo\D4D37C40-9416-42A6-AD43-DB826E7A6CE5.jpeg" alt=""></div>
+                <div class="content"></div>
+                
+                </div>
+
+
+        </section class="events2">
+
+        <section class="candle-of-the-year">
+            <div class="title"><h1>Coming Soon</h1></div>
+            <div class="title"><h2>Gala Candle Of The Year</h2></div>
+              
+            <div class="images">
+                <div class="poster"><img src="c:\Users\Marc-Andy\OneDrive\Projets\D6142A01-89CD-4727-87BB-C829C5813C7E.jpeg" alt=""></div>
+                <div class="poster"><img src="c:\Users\Marc-Andy\OneDrive\Projets\EC60CF89-6CF8-42C0-9C46-F33343BCCD89.jpeg" alt=""></div>
+                <div class="poster"><img src="photo\35D72E07-FE2C-4635-8E3B-A9FA60908D66.jpeg" alt=""></div>
+                <div class="content"></div>
+
+        </section>
+        <div class="button-container">
+            <button><a href="https://www.eventbrite.com/e/gala-candle-of-the-year-tickets-1086675970079?aff=ebdsoporgprofile&fbclid=IwZXh0bgNhZW0CMTEAAR33_yf3cc2A2txpmukU7wzqwX0PlJapNcHbqmDP2B8VC9meybHgcjLdj00_aem_cZ03pAM__a_V5yO2_6d4vA">Get you tickets now</a></button>
+        </div>
+        <footer>
+    <div class="text3">
+    <h1>Partners</h1>
+</div>
+<div class="partners-container">
+    <a href="https://www.instagram.com/beau_terrible/"><div class="Partners"><img src="photo\Beau terrible-01 copie.png" alt=""></div></a>
+    <a href="https://www.instagram.com/bonezzmontreal/"><div class="Partners"><img src="photo\bonezze.png" alt=""></div></a>
+    <a href=""><div class="Partners"><img src="photo\edwin.png" alt=""></div></a>
+    <a href="https://www.instagram.com/fantaisie_line/"><div class="Partners"><img src="photo\fantas.png" alt=""></div></a>
+    <a href=""><div class="Partners"><img src="photo\g122.png" alt=""></div></a>
+    <a href="https://www.instagram.com/mellow_terra/"><div class="Partners"><img src="photo\mellow.png" alt=""></div></a>
+    <a href="https://www.instagram.com/ateliermesse"><div class="Partners"><img src="photo\messe.png" alt=""></div></a>
+    <a href="https://www.instagram.com/samijo.mtl/"><div class="Partners"><img src="photo\sam.png" alt=""></div></a>
+    <a href="https://www.instagram.com/studio_acces/"><div class="Partners"><img src="photo\studio.png" alt=""></div></a>
+    <a href=""><div class="Partners"><img src="photo\unio.png" alt=""></div></a>
+    <a href="https://www.instagram.com/zinedesigns/"><div class="Partners"><img src="photo\z.png" alt=""></div></a>
+    <a href="https://www.instagram.com/prime_designer_/"><div class="Partners"><img src="photo\prime.png" alt=""></div></a>
+</div>
+<div class="social-icons">
+    <a href="https://www.tiktok.com/discover/seriousmodels" target="_blank" title="Follow us on TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/seriousmodels/" target="_blank" title="Follow us on Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/SseriousModels/" target="_blank" title="Follow us on Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+</div>
+</div>
+</div>
+
+<!-- Additional Code -->
+<div class="elementor-element elementor-element-91bd2bf e-flex e-con-boxed e-con e-parent">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-114582db e-flex e-con-boxed e-con e-child">
+    <div class="e-con-inner">
+        <div class="elementor-icon-box-wrapper">
+            <div class="elementor-icon-box-icon">
+                <a href="tel:4383792121" class="elementor-icon elementor-animation-shrink">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <div class="elementor-icon-box-content">
+                <h4 class="elementor-icon-box-title">
+                    <a href="tel:4383792121">call-us</a>
+                </h4>
+                <p class="elementor-icon-box-description">438-686-2948</p>
+            </div>
+        </div>
+        <div class="elementor-icon-box-wrapper">
+            <div class="elementor-icon-box-icon">
+                <a href="https://paysagementcleancut.ca/?page_id=300" class="elementor-icon elementor-animation-shrink">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="elementor-icon-box-content">
+                <h4 class="elementor-icon-box-title">
+                    <a href="https://paysagementcleancut.ca/?page_id=300">Email</a>
+                </h4>
+                <p class="elementor-icon-box-description">Bookseriouspictures@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+   </footer>
+    </body>
+</html>

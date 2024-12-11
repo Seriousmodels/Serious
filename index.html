@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Serious-Video</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: radial-gradient(grey, black);
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .text-container {
+            z-index: 3;
+            font-size: 10vw;
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            padding: 5%;
+        }
+
+        .text {
+            color: rgb(255, 255, 255);
+            font-family: 'Times New Roman', Times, serif;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+
+        .text:hover {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 0, 0);
+            opacity: 1;
+            padding: 5vw;
+            border-radius: 5vw;
+            font-size: 120%;
+        }
+
+        .video-container {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Stack 3 videos for small screens */
+        .video-stack {
+            display: flex;
+            flex-direction: column; /* Stack videos vertically */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .video-stack video {
+            flex: 1; /* Each video takes equal height */
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .text-container {
+                font-size: 9vw; /* Adjust font size for smaller screens */
+            }
+
+            /* Stack videos vertically for small screens */
+            .video-container {
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none;
+            }
+
+            .video-container .video {
+                display: none; /* Hide the single video container */
+            }
+
+            .video-stack {
+                display: flex;
+                flex-direction: column; /* Stack the 3 videos */
+            }
+
+            .video-stack video {
+                height: 33.33vh; /* Each video takes up one-third of the screen */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-container {
+                font-size: 20vw; /* Adjust font size for very small screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <a href="s5.html" class="text">GET SERIOUS</a>
+    </div>
+
+    <div class="video-container">
+        <!-- Single video for large screens -->
+        <div class="video">
+            <video preload="none" autoplay loop muted>
+                <source src="photo\54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Stack of 3 videos for small screens -->
+        <div class="video-stack">
+            <video preload="none" autoplay loop muted>
+                <source src="photo\54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+            <video preload="none" autoplay loop muted>
+                <source src="photo\54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+            <video preload="none" autoplay loop muted>
+                <source src="photo\54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+</html>
