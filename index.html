@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Serious-Video</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serious-Video</title>
     <style>
         body {
             background-image: radial-gradient(grey, black);
@@ -65,18 +65,19 @@
             flex-direction: column; /* Stack videos vertically */
             width: 100%;
             height: 100vh;
+            justify-content: space-between; /* Ensure there's space between videos */
         }
 
         .video-stack video {
-            flex: 1; /* Each video takes equal height */
-            width: 100%;
+            width: 100%; /* Ensures video takes up the full width */
+            height: 33.33vh; /* Ensures each video takes up 1/3 of the screen height */
             object-fit: cover;
         }
 
         /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .text-container {
-                font-size: 9vw; /* Adjust font size for smaller screens */
+                font-size: 5vw; /* Adjust font size for smaller screens */
             }
 
             /* Stack videos vertically for small screens */
@@ -87,17 +88,15 @@
                 pointer-events: none;
             }
 
+            /* Hide the single video container */
             .video-container .video {
-                display: none; /* Hide the single video container */
+                display: none;
             }
 
+            /* Ensure the video stack is visible */
             .video-stack {
                 display: flex;
                 flex-direction: column; /* Stack the 3 videos */
-            }
-
-            .video-stack video {
-                height: 33.33vh; /* Each video takes up one-third of the screen */
             }
         }
 
@@ -106,30 +105,35 @@
                 font-size: 20vw; /* Adjust font size for very small screens */
             }
         }
-
+        @media ( min-width:600px){
+            .video-stack{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="text-container">photo/54193909927_e1623f28a0_vm (1).mp4
+    <div class="text-container">
         <a href="s5.html" class="text">GET SERIOUS</a>
     </div>
 
     <div class="video-container">
-           <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo">
-                    <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
-                    </video>
+        <!-- Single video for large screens -->
+        <video autoplay loop muted playsinline oncontextmenu="return false;" preload="auto" class="video">
+            <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+        </video>
 
         <!-- Stack of 3 videos for small screens -->
         <div class="video-stack">
-             <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo">
-                    <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
-                    </video>
-           <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo">
-                    <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
-                    </video>
-           <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo">
-                    <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
-                    </video>
+            <video autoplay loop muted playsinline oncontextmenu="return false;" preload="auto">
+                <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+            <video autoplay loop muted playsinline oncontextmenu="return false;" preload="auto">
+                <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
+            <video autoplay loop muted playsinline oncontextmenu="return false;" preload="auto">
+                <source src="photo/54193909927_e1623f28a0_vm (1).mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 </body>
